@@ -20,6 +20,7 @@ const Toggle = () => {
         children={mode() === "light" ? <LightMode /> : <DarkMode />}
       />
       <Typography variant="body1" children="Alternar a cor do tema entre claro e escuro." />
+      <Typography variant="caption" children="Mas, por enquanto, não está funcionando." />
     </Stack>
   );
 };
