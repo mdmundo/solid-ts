@@ -1,18 +1,17 @@
 import { Accessor, createContext, createSignal, ParentProps, Setter } from "solid-js";
 import useMediaQuery from "@suid/material/useMediaQuery";
 
-type PalletteMode = "light" | "dark" | undefined;
+type PaletteMode = "light" | "dark" | undefined;
 
 interface IGlobal {
-  mode?: Accessor<PalletteMode>;
-  setMode?: Setter<string>;
+  mode: Accessor<PaletteMode>;
+  setMode: Setter<PaletteMode>;
 }
 
-export const Global = createContext<IGlobal>({});
+const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+const [mode, setMode] = createSignal<PaletteMode>(prefersDarkMode() ? "dark" : "light");
+export const Global = createContext<IGlobal>({ mode, setMode });
 
 export const Provider = ({ children }: ParentProps) => {
-  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
-  const [mode, setMode] = createSignal<PalletteMode>(prefersDarkMode() ? "dark" : "light");
-
   return <Global.Provider value={{ mode, setMode }}>{children}</Global.Provider>;
 };

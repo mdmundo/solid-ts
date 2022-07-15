@@ -3,14 +3,13 @@ import CssBaseline from "@suid/material/CssBaseline";
 import { createMemo, ParentProps, useContext } from "solid-js";
 import { Global } from "./Global";
 
+const { mode } = useContext(Global);
+
+const theme = createTheme({ palette: { mode: mode() } });
+
 const Theme = ({ children }: ParentProps) => {
-  const { mode } = useContext(Global);
-
-  const theme = createMemo(() => createTheme({ palette: { mode: mode && mode() } }));
-  // mode && mode() to contour undefined
-
   return (
-    <ThemeProvider theme={theme()}>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
       {children}
     </ThemeProvider>

@@ -4,6 +4,7 @@ import Basic from "./Basic";
 import Counter from "./Counter";
 import Alerts from "./Alerts";
 import Typing from "./Typing";
+import Toggle from "./Toggle";
 
 const App: Component = () => {
   return (
@@ -11,6 +12,7 @@ const App: Component = () => {
       <Basic children={<Counter />} />
       <Basic children={<Alerts />} />
       <Basic children={<Typing />} />
+      <Basic children={<Toggle />} />
     </Container>
   );
 };
