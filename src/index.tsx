@@ -1,6 +1,17 @@
 /* @refresh reload */
-import { render } from 'solid-js/web';
+import { render } from "solid-js/web";
 
-import App from './App';
+import App from "./App";
+import { Provider as Global } from "./Global";
+import Theme from "./Theme";
 
-render(() => <App />, document.getElementById('root') as HTMLElement);
+render(
+  () => (
+    <Global>
+      <Theme>
+        <App />
+      </Theme>
+    </Global>
+  ),
+  document.getElementById("root") as HTMLElement
+);
