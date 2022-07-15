@@ -3,12 +3,14 @@ import Container from "@suid/material/Container";
 import Basic from "./Basic";
 import Counter from "./Counter";
 import Alerts from "./Alerts";
+import Typing from "./Typing";
 
 const App: Component = () => {
   return (
     <Container maxWidth="sm">
       <Basic children={<Counter />} />
       <Basic children={<Alerts />} />
+      <Basic children={<Typing />} />
     </Container>
   );
 };
