@@ -1,7 +1,7 @@
 {
-  "name": "vite-template-solid",
+  "name": "solid-ts",
   "version": "0.0.0",
-  "description": "",
+  "description": "Vite, Solid, Material template",
   "scripts": {
     "start": "vite",
     "dev": "vite",
