@@ -5,11 +5,11 @@ import { Global } from "./Global";
 
 const { mode } = useContext(Global);
 
-const theme = createTheme({ palette: { mode: mode() } });
+const theme = createMemo(() => createTheme({ palette: { mode: mode() } }));
 
 const Theme = ({ children }: ParentProps) => {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme()}>
       <CssBaseline />
       {children}
     </ThemeProvider>
