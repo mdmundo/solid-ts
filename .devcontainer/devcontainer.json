@@ -1,0 +1,14 @@
+{
+  "build": { "dockerfile": "Dockerfile" },
+  "securityOpt": ["label=disable"],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "redhat.vscode-yaml",
+        "vivaxy.vscode-conventional-commits",
+        "eamodio.gitlens",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  }
+}
